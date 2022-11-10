@@ -1,38 +1,96 @@
-.App {
-  text-align: center;
+* {
+    padding: 0;
+    margin: 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+::-webkit-scrollbar {
+    height: 14px;              /* height of horizontal scrollbar ← You're missing this */
+    width: 5px;               /* width of vertical scrollbar */
+    /* border: 1px solid #d5d5d5; */
+    background-color: #d5d5d5;
   }
-}
+  body {
+    background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+  }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  .test {
+    position: fixed !important;
+    top: 64px !important;
+    left: 300px;
+    width: calc(100vw - 600px);
+    height: calc(100vh - 64px - 50px);
+  }
+  @media only screen and (max-width: 992px) {
+    .test {
+      left: 0px;
+      width: calc(100vw - 300px);
+    }
+  }
+  .msg {
+    display: flex;
+    flex-direction: column;
+  }
+  .msg-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 20px;
+  }
+  .msg-item.owner {
+    align-items: flex-start;
+  }
+  .msg-text {
+    max-width: 52%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  .msg-text.owner {
+    margin-left: 20px;
+    background-color: rgb(235, 227, 227);
+    color:rgb(26, 24, 24);
+
+  }
+  .msg-text.other {
+    margin-right: 20px;
+    background-color: #1890ff;
+    color:white;
+
+  }
+
+.box-chat {
+  padding: 0 10px;
+  overflow: auto !important;
+  height: calc(100vh - 64px - 64px - 35px);
+}
+.footerMsg {
+  /* background-color: #d5d5d5; */
+  /* height: 50px; */
+  height: 35px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  
+}
+.footerMsg input {
+  width: 100%;
+  border: none;
+  outline: none;
+  height: 100%;
+  color: grey;
+  padding: 0 10px;
+
+}
+.iconsend {
+  display: inline-block;
+  width: 60px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100%;
+  font-size: 18px;
+  
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.buttonsend {
+  padding-top: 3px;
+  transform: rotate(-20deg);
+  color: grey
 }
